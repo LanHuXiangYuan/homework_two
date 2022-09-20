@@ -27,8 +27,8 @@ public class Main {
         System.out.println("生成结果已经存储在"+ANSWER_FILE);
         //取得系统时间功能
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String result = df.format(System.currentTimeMillis())+aAddress+"于"+bAddress+ "的相似度为 ： "
-                + String.format("%.3f", LevenshteinAlgorithm.Levenshtein(a, b));
+        String result = df.format(System.currentTimeMillis())+"\n"+aAddress+"与"+bAddress+ "的相似度为 ： "
+                + String.format("%.3f", LevenshteinAlgorithm.Levenshtein(a, b)*100)+"%";
         writeAnswer(result);
         System.out.println(result);
     }
