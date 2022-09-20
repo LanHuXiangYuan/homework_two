@@ -60,11 +60,9 @@ public class Main {
 
     static public void writeAnswer(String str) {
         File answer_file=new File(ANSWER_FILE);
-        boolean bool = false;
-
         if(!answer_file.exists()){
             try {
-                bool=answer_file.createNewFile();
+                answer_file.createNewFile();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -72,7 +70,7 @@ public class Main {
 
         byte[] bytes =str.getBytes();
         int b=bytes.length;  //是字节的长度，不是字符串的长度
-        FileOutputStream fileOutputStream= null;
+        FileOutputStream fileOutputStream;
         try {
             fileOutputStream = new FileOutputStream(answer_file);
             fileOutputStream.write(bytes,0,b);
